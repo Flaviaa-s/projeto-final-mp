@@ -14,7 +14,7 @@ function carregaRetrospectiva() {
     mes03: {
       nome: "Março",
       img: "img/habilitacao.jpg",
-      descricao:"Recebi minha habilitação provisória, depois de muita emoção e esforço.",
+      descricao:"Recebi minha habilitação provisória, depois de muita emoção haha.",
     },
     mes04: {
       nome: "Abril",
@@ -24,7 +24,7 @@ function carregaRetrospectiva() {
     mes05: {
       nome: "Maio",
       img: "img/maceio.png",
-      descricao: "Viajei para Maceió, um destino que sempre sonhei conhecer.",
+      descricao: "Viajei para Maceió.",
     },
     mes06: {
       nome: "Junho",
@@ -81,17 +81,18 @@ function carregaRetrospectiva() {
 // Chama a função para carregar a retrospectiva ao carregar a página
 carregaRetrospectiva();
 
-// Adiciona o comportamento de zoom nas imagens
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const imagens = document.querySelectorAll(".card-img");
 
   imagens.forEach(img => {
-    img.addEventListener("click", function() {
-      // Verifica se a imagem já está com zoom aplicado
+    img.addEventListener("click", function () {
+      // Se a imagem já está com zoom, remove o zoom
       if (img.classList.contains("zoomed")) {
-        img.classList.remove("zoomed"); // Remove o zoom
+        img.classList.remove("zoomed");
       } else {
-        img.classList.add("zoomed"); // Aplica o zoom
+        // Remove o zoom de todas as imagens antes de aplicar na nova
+        imagens.forEach(imagem => imagem.classList.remove("zoomed"));
+        img.classList.add("zoomed");
       }
     });
   });

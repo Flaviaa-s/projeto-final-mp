@@ -133,4 +133,17 @@ section {
     }
 }
 
-
+.card-img {
+    transition: transform 0.3s ease; /* Animação suave */
+    cursor: pointer; /* Cursor para indicar clicável */
+  }
+  
+  .card-img.zoomed {
+    transform: scale(1.5); /* Ampliação */
+    z-index: 10; /* Sobrepor outras imagens */
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: bold; 
+  }
+  
